@@ -7,13 +7,13 @@ $('.examples-tab').click(function (e) {
 });
 
 
-var numSlick = 0;
+let numSlick = 0;
 
 $('.gallery-slider').each(function () {
     numSlick++;
 
-    var arrowNext;
-    var arrowPrev;
+    let arrowNext;
+    let arrowPrev;
 
     if ($(window).width() > 700) {
         arrowNext = $(this).siblings('.title-flex').find('.page-arrow_next').addClass('slider-next-' + numSlick);
@@ -35,7 +35,7 @@ $('.gallery-slider').each(function () {
 
 if ($(window).width() < 1200) {
     $('.swimming-frame').on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
-        var i = (currentSlide ? currentSlide : 0) + 1;
+        const i = (currentSlide ? currentSlide : 0) + 1;
         $('.swimming_actives').html(i);
         $('.swimming_all').html(slick.slideCount);
     });
@@ -50,8 +50,8 @@ if ($(window).width() < 1200) {
 }
 
 
-var swimmingColor = 1;
-var swimmingSize = 1;
+let swimmingColor = 1;
+let swimmingSize = 1;
 
 
 $('.swimming-check').click(function () {
