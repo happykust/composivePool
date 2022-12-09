@@ -2558,6 +2558,12 @@ label {
     display: flex;
     flex-direction: column;
     position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-border {
+
 }
 
 .classic1 {
@@ -2570,54 +2576,89 @@ label {
     margin-left: -41px;
 }
 
-.luxor1 {
-    width: -webkit-fill-available;
-    margin-top: -237px;
-    right: -9px;
-    z-index: 2;
+.luxor1pc {
+    width: 73%;
     position: absolute;
-    height: 1188px;
-    margin-left: -31px;
+    height: 96%;
+    margin-right: 8px;
+    margin-top: 5px;
 }
 
-.luxor2 {
-    width: -webkit-fill-available;
-    margin-top: -185px;
-    right: -9px;
-    z-index: 2;
+.luxor2pc {
+    width: 73%;
     position: absolute;
-    height: 1081px;
-    margin-left: -31px;
+    height: 88%;
+    margin-right: 8px;
+    margin-top: 3px;
 }
 
-.luxor3 {
-    width: -webkit-fill-available;
-    margin-top: -126px;
-    right: -9px;
-    z-index: 2;
+.luxor3pc {
+    width: 73%;
     position: absolute;
-    height: 966px;
-    margin-left: -31px;
+    height: 78%;
+    margin-right: 8px;
+    margin-top: 4px;
 }
 
-.luxor4 {
-    width: -webkit-fill-available;
-    margin-top: -68px;
-    right: -9px;
-    z-index: 2;
+.luxor4pc {
+    width: 73%;
     position: absolute;
-    height: 849px;
-    margin-left: -31px;
+    height: 69%;
+    margin-right: 8px;
+    margin-top: 5px;
 }
 
-.luxor5 {
-    width: -webkit-fill-available;
-    margin-top: -12px;
-    right: -9px;
-    z-index: 2;
+.luxor5pc {
+    width: 73%;
     position: absolute;
-    height: 738px;
-    margin-left: -31px;
+    height: 60%;
+    margin-right: 8px;
+    margin-top: 5px;
+}
+
+.luxor1mobile{
+    width: 36%;
+    position: absolute;
+    height: 194%;
+    margin-right: -7px;
+    margin-top: 5px;
+    transform: rotate(90deg);
+}
+
+.luxor2mobile {
+    width: 36%;
+    position: absolute;
+    height: 178%;
+    margin-right: -4px;
+    margin-top: 5px;
+    transform: rotate(90deg);
+}
+
+.luxor3mobile {
+    width: 36%;
+    position: absolute;
+    height: 156%;
+    margin-right: -7px;
+    margin-top: 5px;
+    transform: rotate(90deg);
+}
+
+.luxor4mobile {
+    width: 36%;
+    position: absolute;
+    height: 141%;
+    margin-right: -7px;
+    margin-top: 5px;
+    transform: rotate(90deg);
+}
+
+.luxor5mobile {
+    width: 36%;
+    position: absolute;
+    height: 120%;
+    margin-right: -7px;
+    margin-top: 5px;
+    transform: rotate(90deg);
 }
 
 .check-icon {
@@ -3189,7 +3230,7 @@ label {
 
 .swimming-border__item p {
     margin-top: 7px;
-    font-family: "Montserrat";
+    font-family: "Montserrat", serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -3198,9 +3239,13 @@ label {
     color: #8A8A8A;
 }
 
+.swimming-border__item img {
+    margin: auto;
+}
+
 .swimming-color__item p {
     margin-top: 7px;
-    font-family: "Montserrat";
+    font-family: "Montserrat", serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -3230,6 +3275,9 @@ label {
         line-height: 11px;
         margin-top: 5px;
         margin-left: 0;
+    }
+    .swimming-border__item p {
+        font-size: 8px;
     }
 }
 

@@ -23,7 +23,6 @@ $('.gallery-slider').each(function () {
         arrowPrev = $(this).siblings('.page-arrow').find('.page-arrow_prev').addClass('slider-prev-' + numSlick);
     }
 
-
     $(this).addClass('slider-' + numSlick).slick({
         infinite: false,
         slidesToShow: 1,
@@ -73,16 +72,15 @@ $('.swimming-check').click(function () {
     $('.swimming-photo_item[data-color="' + swimmingColor + '"][data-size="' + swimmingSize + '"]').addClass('swimming-photo_active');
     let clicks = $('.swimming-tab_active')[0].textContent.replace("Серия ", "").trim();
     setClassBorder($(this));
-
 });
 
 function setClassBorder(p) {
     console.log(p[0]);
-    if (p[0].hasAttribute("data-border_nameses") == true) {
+    if (p[0].hasAttribute("data-border_nameses")) {
         let type = p[0].getAttribute("data-border_nameses").split("_");
         setTypeBorder(type);
     }
-    if (p[0].hasAttribute("color-border") == true) {
+    if (p[0].hasAttribute("color-border")) {
         let type = p[0].getAttribute("color-border").split("_");
         setColorBorder(type);
     }
@@ -102,10 +100,12 @@ function setClassBorder(p) {
 }
 
 function setTypeBorder(types) {
+    const is_mobile = window.innerWidth <= 1200 ? 0 : 1;
     switch (types[0]) {
         case "luxor":
-            let check = document.getElementsByClassName("luxor-border")[0].childNodes[3];
-            check.setAttribute("class", types[0] + types[1]);
+            let check = document.getElementsByClassName("luxor-border")[is_mobile].childNodes[1];
+            check.setAttribute("class", types[0] + types[1] +
+                check.getAttribute("platform"));
             //console.log(check);
             break;
         case "red":
@@ -123,13 +123,15 @@ function setNewColor(chk, nmb) {
 
 function setColorBorder(number) {
     let check = '';
+    const is_mobile = window.innerWidth <= 1200 ? 0 : 1;
     switch (number[0]) {
         case "luxor-color":
-            check = document.getElementsByClassName("luxor-border")[0].childNodes[3];
+            console.log(number);
+            check = document.getElementsByClassName("luxor-border")[is_mobile].childNodes[1];
             setNewColor(check, number[1]);
             break;
         case "classic-color":
-            check = document.getElementsByClassName("classic-border")[0].childNodes[3];
+            check = document.getElementsByClassName("classic-border")[is_mobile].childNodes[1];
             setNewColor(check, number[1]);
             break;
     }
@@ -145,7 +147,6 @@ $('.swimming-tab').click(function (e) {
 
     let swimming = $('.swimming-wrap[data-swimming="' + swimmingItem + '"]');
 
-
     swimmingColor = 1;
     swimmingSize = 1;
 
@@ -154,7 +155,6 @@ $('.swimming-tab').click(function (e) {
     swimming.find('.swimming-color__item:eq(0)').addClass('swimming-check_active');
     swimming.find('.swimming-border__item:eq(0)').addClass('swimming-check_active');
     swimming.find('.swimming-size__item:eq(0)').addClass('swimming-check_active');
-
 
     $('.swimming-photo_item').removeClass('swimming-photo_active');
     $('.swimming-photo_item[data-color="' + swimmingColor + '"][data-size="' + swimmingSize + '"]').addClass('swimming-photo_active');
@@ -177,7 +177,6 @@ $('.swimming-frame').on('afterChange', function (event, slick, currentSlide, nex
     swimming.find('.swimming-border__item:eq(0)').addClass('swimming-check_active');
     swimming.find('.swimming-size__item:eq(0)').addClass('swimming-check_active');
 
-
     $('.swimming-photo_item').removeClass('swimming-photo_active');
     $('.swimming-photo_item[data-color="' + swimmingColor + '"][data-size="' + swimmingSize + '"]').addClass('swimming-photo_active');
 });
@@ -188,15 +187,12 @@ $('.page-form__check').click(function () {
 });
 
 $('.offices-city').change(function () {
-
     let tab = $(this).val();
 
     $('.offices-list').hide();
 
     $('.offices-list[data-city = ' + tab + ']').css("display", "grid").hide().fadeIn();
-
     $('.offices-city__label').removeClass('offices-city__label_active');
-
 });
 
 $('.offices-city').focus(function () {
