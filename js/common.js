@@ -45,12 +45,16 @@ if ($(window).width() < 1200) {
         prevArrow: '.swimming-prev',
         nextArrow: '.swimming-next',
         adaptiveHeight: true,
+        cloned: false
     });
+
+    $('.slick-cloned').last().remove();
 }
 
 
 let swimmingColor = 1;
 let swimmingSize = 1;
+let borderColor = 1;
 
 
 $('.swimming-check').click(function () {
@@ -77,12 +81,14 @@ $('.swimming-check').click(function () {
 function setClassBorder(p) {
     console.log(p[0]);
     if (p[0].hasAttribute("data-border_nameses")) {
-        let type = p[0].getAttribute("data-border_nameses").split("_");
-        setTypeBorder(type);
+        const type = p[0].getAttribute("data-border_nameses").split("_");
+        const cs = p[0].getAttribute("data-custom_sizes")
+        setTypeBorder(type, cs);
     }
     if (p[0].hasAttribute("color-border")) {
-        let type = p[0].getAttribute("color-border").split("_");
-        setColorBorder(type);
+        const type = p[0].getAttribute("color-border").split("_");
+        const cs = p[0].getAttribute("data-custom_sizes")
+        setColorBorder(type, cs);
     }
     // console.log(type);
     /*let qstr = document.getElementsByClassName('swimming-size__item swimming-check');
@@ -99,42 +105,43 @@ function setClassBorder(p) {
         console.log(qs);*/
 }
 
-function setTypeBorder(types) {
+function setTypeBorder(types, cs) {
     const is_mobile = window.innerWidth <= 1200 ? 0 : 1;
-    switch (types[0]) {
-        case "luxor":
-            let check = document.getElementsByClassName("luxor-border")[is_mobile].childNodes[1];
-            check.setAttribute("class", types[0] + types[1] +
-                check.getAttribute("platform"));
-            //console.log(check);
-            break;
-        case "red":
-            break;
+    const check = document.getElementsByClassName(types[0] + "-border")[is_mobile].childNodes[1];
+    const newClassName = types[0] + types[1] + check.getAttribute("platform")
+
+    if (cs) {
+        const new_url = check.getAttribute("src").split("/")
+        new_url[new_url.length - 1] = types[0].charAt(0).toUpperCase() + types[0].slice(1) + borderColor +
+            "size" + types[1] + ".png";
+            check.setAttribute("src", new_url.join("/"))
+        console.log(new_url)
     }
+
+    check.setAttribute("class", newClassName);
 }
 
-function setNewColor(chk, nmb) {
-    let gets = chk.getAttribute("src");
-    let s = gets.split("/");
-    let rd = s[s.length - 1].split(".")[0].slice(0, -1);
-    s[s.length - 1] = rd + nmb + ".png";
+function setNewColor(chk, nmb, cs) {
+    const gets = chk.getAttribute("src")
+    const s = gets.split("/");
+    const rd = cs ?
+        s[s.length - 1].split(".")[0].split("size")[0].slice(0, -1)
+    :
+        s[s.length - 1].split(".")[0].slice(0, -1)
+    console.log(rd, chk, nmb, cs);
+    s[s.length - 1] = cs ?
+        (rd + nmb + "size" + swimmingSize + ".png")
+        :
+        (rd + nmb + ".png")
     chk.setAttribute("src", s.join("/"));
+    borderColor = nmb;
 }
 
-function setColorBorder(number) {
-    let check = '';
+function setColorBorder(number, cs) {
     const is_mobile = window.innerWidth <= 1200 ? 0 : 1;
-    switch (number[0]) {
-        case "luxor-color":
-            console.log(number);
-            check = document.getElementsByClassName("luxor-border")[is_mobile].childNodes[1];
-            setNewColor(check, number[1]);
-            break;
-        case "classic-color":
-            check = document.getElementsByClassName("classic-border")[is_mobile].childNodes[1];
-            setNewColor(check, number[1]);
-            break;
-    }
+    const borderName = number[0].split('-')[0]
+    const check = document.getElementsByClassName(borderName + "-border")[is_mobile].childNodes[1];
+    setNewColor(check, number[1], cs);
 }
 
 $('.swimming-tab').click(function (e) {

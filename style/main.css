@@ -2554,32 +2554,52 @@ label {
 }
 
 .luxor-border,
-.classic-border {
+.classic-border,
+.rio-border,
+.marathon-border,
+.spa-border,
+.splash-border,
+.minipool-border,
+.supermini-border,
+.ipool-border,
+.quick-border {
     display: flex;
     flex-direction: column;
     position: relative;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+    border-radius: 21px;
+    border: 9px solid #333541;
 }
 
-.mobile-border {
+/* CLASSIC STYLES */
 
-}
-
-.classic1 {
-    width: -webkit-fill-available;
-    margin-top: -14px;
-    right: -7px;
-    z-index: 2;
+.classic1pc {
+    width: 71%;
     position: absolute;
-    height: 733px;
-    margin-left: -41px;
+    height: 76%;
+    margin-right: 13px;
+    margin-top: 5px;
 }
+
+.classic1mobile{
+    width: 36%;
+    position: absolute;
+    height: 152%;
+    margin-right: -3px;
+    margin-top: 12px;
+    transform: rotate(90deg);
+}
+
+/* END CLASSIC STYLES */
+
+/* LUXOR STYLES */
 
 .luxor1pc {
     width: 73%;
     position: absolute;
-    height: 96%;
+    height: 93%;
     margin-right: 8px;
     margin-top: 5px;
 }
@@ -2587,7 +2607,7 @@ label {
 .luxor2pc {
     width: 73%;
     position: absolute;
-    height: 88%;
+    height: 85%;
     margin-right: 8px;
     margin-top: 3px;
 }
@@ -2595,7 +2615,7 @@ label {
 .luxor3pc {
     width: 73%;
     position: absolute;
-    height: 78%;
+    height: 75%;
     margin-right: 8px;
     margin-top: 4px;
 }
@@ -2603,7 +2623,7 @@ label {
 .luxor4pc {
     width: 73%;
     position: absolute;
-    height: 69%;
+    height: 66%;
     margin-right: 8px;
     margin-top: 5px;
 }
@@ -2611,7 +2631,7 @@ label {
 .luxor5pc {
     width: 73%;
     position: absolute;
-    height: 60%;
+    height: 57%;
     margin-right: 8px;
     margin-top: 5px;
 }
@@ -2619,7 +2639,7 @@ label {
 .luxor1mobile{
     width: 36%;
     position: absolute;
-    height: 194%;
+    height: 186%;
     margin-right: -7px;
     margin-top: 5px;
     transform: rotate(90deg);
@@ -2628,7 +2648,7 @@ label {
 .luxor2mobile {
     width: 36%;
     position: absolute;
-    height: 178%;
+    height: 169%;
     margin-right: -4px;
     margin-top: 5px;
     transform: rotate(90deg);
@@ -2637,7 +2657,7 @@ label {
 .luxor3mobile {
     width: 36%;
     position: absolute;
-    height: 156%;
+    height: 151%;
     margin-right: -7px;
     margin-top: 5px;
     transform: rotate(90deg);
@@ -2646,7 +2666,7 @@ label {
 .luxor4mobile {
     width: 36%;
     position: absolute;
-    height: 141%;
+    height: 133%;
     margin-right: -7px;
     margin-top: 5px;
     transform: rotate(90deg);
@@ -2655,11 +2675,432 @@ label {
 .luxor5mobile {
     width: 36%;
     position: absolute;
-    height: 120%;
+    height: 115%;
     margin-right: -7px;
     margin-top: 5px;
     transform: rotate(90deg);
 }
+
+/* END LUXOR STYLES */
+
+/* RIO STYLES */
+
+.rio1pc {
+    width: 73%;
+    position: absolute;
+    height: 88%;
+    margin-right: -7px;
+    margin-top: -6px;
+}
+
+.rio2pc {
+    width: 74%;
+    position: absolute;
+    height: 80%;
+    margin-right: -3px;
+    margin-top: 2px;
+}
+
+.rio3pc {
+    width: 74%;
+    position: absolute;
+    height: 70%;
+    margin-right: -8px;
+    margin-top: 2px;
+}
+
+.rio1mobile {
+    width: 38%;
+    position: absolute;
+    height: 174%;
+    margin-right: 6px;
+    margin-top: 1px;
+    transform: rotate(270deg);
+}
+
+.rio2mobile {
+    width: 38%;
+    position: absolute;
+    height: 158%;
+    margin-right: 3px;
+    margin-top: -1px;
+    transform: rotate(270deg);
+}
+
+.rio3mobile {
+    width: 38%;
+    position: absolute;
+    height: 138%;
+    margin-right: -3px;
+    margin-top: -2px;
+    transform: rotate(270deg);
+}
+
+/* END RIO STYLES */
+
+/* MARATHON STYLES */
+
+.marathon1pc {
+    width: 68%;
+    position: absolute;
+    height: 96%;
+    margin-right: 9px;
+    margin-top: 5px;
+}
+
+.marathon2pc {
+    width: 68%;
+    position: absolute;
+    height: 82%;
+    margin-right: 9px;
+    margin-top: 1px;
+}
+
+.marathon1mobile {
+    width: 34%;
+    position: absolute;
+    height: 192%;
+    margin-right: -3px;
+    margin-top: 9px;
+    transform: rotate(90deg);
+}
+
+.marathon2mobile {
+    width: 34%;
+    position: absolute;
+    height: 164%;
+    margin-right: -3px;
+    margin-top: 12px;
+    transform: rotate(90deg);
+}
+
+/* END MARATHON STYLES */
+
+/* IPOOL STYLES */
+
+.ipool1pc {
+    width: 65%;
+    position: absolute;
+    height: 93%;
+    margin-right: 9px;
+    margin-top: 8px;
+}
+
+.ipool1mobile {
+    width: 32%;
+    position: absolute;
+    height: 184%;
+    margin-right: -8px;
+    margin-top: 8px;
+    transform: rotate(90deg);
+}
+
+/* END IPOOL STYLES */
+
+/* SUPERMINI STYLES */
+
+.supermini1pc {
+    width: 44%;
+    position: absolute;
+    height: 33%;
+    margin-right: -4px;
+    margin-top: 3px;
+}
+
+.supermini1mobile {
+    width: 22%;
+    position: absolute;
+    height: 66%;
+    margin-right: -2px;
+    transform: rotate(90deg);
+}
+
+/* END SUPERMINI STYLES */
+
+/* QUICK STYLES */
+
+.quick1pc {
+    width: 84%;
+    position: absolute;
+    height: 109%;
+    margin-right: -4px;
+    margin-top: 3px;
+}
+
+.quick2pc {
+    width: 84%;
+    position: absolute;
+    height: 96%;
+    margin-right: -4px;
+    margin-top: -2px;
+}
+
+.quick3pc {
+    width: 84%;
+    position: absolute;
+    height: 81%;
+    margin-right: -4px;
+    margin-top: 3px;
+}
+
+.quick4pc {
+    width: 84%;
+    position: absolute;
+    height: 65%;
+    margin-right: -4px;
+    margin-top: -2px;
+}
+
+.quick1mobile {
+    width: 44%;
+    position: absolute;
+    height: 219%;
+    margin-top: -4px;
+    margin-right: -2px;
+    transform: rotate(90deg);
+}
+
+.quick2mobile {
+    width: 43%;
+    position: absolute;
+    height: 194%;
+    margin-top: -4px;
+    margin-right: -2px;
+    transform: rotate(90deg);
+}
+
+.quick3mobile {
+    width: 44%;
+    position: absolute;
+    height: 164%;
+    margin-top: -4px;
+    margin-right: 2px;
+    transform: rotate(90deg);
+}
+
+.quick4mobile {
+    width: 44%;
+    position: absolute;
+    height: 128%;
+    margin-top: -4px;
+    margin-right: -2px;
+    transform: rotate(90deg);
+}
+
+/* END QUICK STYLES */
+
+/* SPA STYLES */
+
+.spa1pc {
+    width: 77%;
+    position: absolute;
+    height: 59%;
+    margin-right: -4px;
+    margin-top: -1px;
+}
+
+.spa2pc {
+    width: 63%;
+    position: absolute;
+    height: 48%;
+    margin-right: -4px;
+    margin-top: 3px;
+}
+
+.spa3pc {
+    width: 63%;
+    position: absolute;
+    height: 53%;
+    margin-right: -9px;
+    margin-top: -9px;
+}
+
+.spa4pc {
+    width: 44%;
+    position: absolute;
+    height: 33%;
+    margin-right: -4px;
+    margin-top: 3px;
+}
+
+.spa1mobile {
+    width: 39%;
+    position: absolute;
+    height: 118%;
+    margin-right: 2px;
+    margin-top: -5px;
+    transform: rotate(270deg);
+}
+
+.spa2mobile {
+    width: 31%;
+    position: absolute;
+    height: 98%;
+    margin-right: -2px;
+    transform: rotate(270deg);
+}
+
+.spa3mobile {
+    width: 32%;
+    position: absolute;
+    height: 106%;
+    margin-top: -13px;
+    margin-right: 10px;
+    transform: rotate(270deg);
+}
+
+.spa4mobile {
+    width: 22%;
+    position: absolute;
+    height: 66%;
+    margin-right: -2px;
+    transform: rotate(270deg);
+}
+
+/* END SPA STYLES */
+
+/* MINIPOOL STYLES */
+
+.minipool1pc {
+    width: 77%;
+    position: absolute;
+    height: 75%;
+    margin-right: 11px;
+    margin-top: 15px;
+}
+
+.minipool2pc {
+    width: 77%;
+    position: absolute;
+    height: 66%;
+    margin-right: 11px;
+    margin-top: 15px;
+}
+
+.minipool3pc {
+    width: 77%;
+    position: absolute;
+    height: 53%;
+    margin-right: 11px;
+    margin-top: 15px;
+}
+
+.minipool4pc {
+    width: 85%;
+    position: absolute;
+    height: 62%;
+    margin-right: -9px;
+    margin-top: -2px;
+}
+
+.minipool1mobile {
+    width: 38%;
+    position: absolute;
+    height: 152%;
+    margin-right: -15px;
+    margin-top: 7px;
+    transform: rotate(270deg);
+}
+
+.minipool2mobile {
+    width: 38%;
+    position: absolute;
+    height: 132%;
+    margin-right: -15px;
+    margin-top: 7px;
+    transform: rotate(270deg);
+}
+
+.minipool3mobile {
+    width: 38%;
+    position: absolute;
+    height: 106%;
+    margin-top: 7px;
+    margin-right: -12px;
+    transform: rotate(270deg);
+}
+
+.minipool4mobile {
+    width: 43%;
+    position: absolute;
+    height: 125%;
+    margin-right: -1px;
+    margin-top: -6px;
+    transform: rotate(270deg);
+}
+
+/* END MINIPOOL STYLES */
+
+/* SPLASH STYLES */
+
+.splash1pc {
+    width: 55%;
+    position: absolute;
+    height: 39%;
+    margin-right: -2px;
+}
+
+.splash2pc {
+    width: 55%;
+    position: absolute;
+    height: 39%;
+    margin-right: -2px;
+}
+
+.splash3pc {
+    width: 76%;
+    position: absolute;
+    height: 36%;
+    margin-right: -5px;
+    margin-top: 4px;
+}
+
+.splash4pc {
+    width: 63%;
+    position: absolute;
+    height: 30%;
+    margin-right: 30px;
+    margin-top: -2px;
+}
+
+.splash1mobile {
+    width: 28%;
+    position: absolute;
+    height: 80%;
+    margin-right: 1px;
+    margin-top: -4px;
+    transform: rotate(270deg);
+}
+
+.splash2mobile {
+    width: 28%;
+    position: absolute;
+    height: 80%;
+    margin-right: 1px;
+    margin-top: -4px;
+    transform: rotate(270deg);
+}
+
+.splash3mobile {
+    width: 39%;
+    position: absolute;
+    height: 72%;
+    margin-top: -9px;
+    margin-right: -4px;
+    transform: rotate(270deg);
+}
+
+.splash4mobile {
+    width: 30%;
+    position: absolute;
+    height: 62%;
+    margin-right: 6px;
+    margin-top: 20px;
+    transform: rotate(270deg);
+}
+
+/* END SPLASH STYLES */
+
 
 .check-icon {
     width: 20px;
