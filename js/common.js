@@ -40,15 +40,12 @@ if ($(window).width() < 1200) {
     });
 
     $('.swimming-frame').slick({
-        infinite: true,
         slidesToShow: 1,
         prevArrow: '.swimming-prev',
         nextArrow: '.swimming-next',
         adaptiveHeight: true,
         cloned: false
     });
-
-    $('.slick-cloned').last().remove();
 }
 
 
