@@ -79,7 +79,7 @@ function setClassBorder(p) {
     console.log(p[0]);
     if (p[0].hasAttribute("data-border_nameses")) {
         const type = p[0].getAttribute("data-border_nameses").split("_");
-        const cs = p[0].getAttribute("data-custom_sizes")
+        const cs = p[0].getAttribute("data-custom_sizes");
         setTypeBorder(type, cs);
     }
     if (p[0].hasAttribute("color-border")) {
@@ -103,19 +103,30 @@ function setClassBorder(p) {
 }
 
 function setTypeBorder(types, cs) {
-    const is_mobile = window.innerWidth <= 1200 ? 0 : 1;
-    const check = document.getElementsByClassName(types[0] + "-border")[is_mobile].childNodes[1];
-    const newClassName = types[0] + types[1] + check.getAttribute("platform")
+    const platform = window.innerWidth <= 1200 ? "mobile" : "pc";
+    const newClassName = types[0] + types[1] + platform;
+    const els = document.getElementsByClassName(types[0] + "-border");
 
-    if (cs) {
-        const new_url = check.getAttribute("src").split("/")
-        new_url[new_url.length - 1] = types[0].charAt(0).toUpperCase() + types[0].slice(1) + borderColor +
-            "size" + types[1] + ".png";
-            check.setAttribute("src", new_url.join("/"))
-        console.log(new_url)
+    console.log(els);
+
+    for(let i = 0; i < els.length; i++) {
+        element = els[i];
+        if (element.getAttribute("platform") === platform) {
+            check = element.childNodes[1];
+            console.log(newClassName);
+            console.log(check);
+
+            if (cs) {
+                const new_url = check.getAttribute("src").split("/")
+                new_url[new_url.length - 1] = types[0].charAt(0).toUpperCase() + types[0].slice(1) + borderColor +
+                    "size" + types[1] + ".png";
+                    check.setAttribute("src", new_url.join("/"));
+                console.log(new_url);
+            }
+        
+            check.setAttribute("class", newClassName);
+        }
     }
-
-    check.setAttribute("class", newClassName);
 }
 
 function setNewColor(chk, nmb, cs) {
