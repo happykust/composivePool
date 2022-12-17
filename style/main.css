@@ -3046,12 +3046,12 @@ label {
 }
 
 .splash2pc {
-    width: 106%;
+    width: 110%;
     position: absolute;
-    height: 31%;
+    height: 32%;
     margin-right: 8px;
     transform: rotate(90deg);
-    margin-top: 14px;
+    margin-top: 27px;
 }
 
 .splash3pc {

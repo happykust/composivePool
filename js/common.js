@@ -130,25 +130,28 @@ function setTypeBorder(types, cs) {
 }
 
 function setNewColor(chk, nmb, cs) {
-    const gets = chk.getAttribute("src")
-    const s = gets.split("/");
-    const rd = cs ?
-        s[s.length - 1].split(".")[0].split("size")[0].slice(0, -1)
-        :
-        s[s.length - 1].split(".")[0].slice(0, -1)
-    console.log(rd, chk, nmb, cs);
-    s[s.length - 1] = cs ?
-        (rd + nmb + "size" + swimmingSize + ".png")
-        :
-        (rd + nmb + ".png")
-    chk.setAttribute("src", s.join("/"));
+    const platform = window.innerWidth <= 1200 ? "mobile" : "pc";
+    for (let i = 0; i < chk.length; i++) {
+        if (chk[i].getAttribute("platform") === platform) {
+            const gets = chk[i].childNodes[1].getAttribute("src")
+            const s = gets.split("/");
+            const rd = cs ?
+                s[s.length - 1].split(".")[0].split("size")[0].slice(0, -1)
+                :
+                s[s.length - 1].split(".")[0].slice(0, -1)
+            s[s.length - 1] = cs ?
+                (rd + nmb + "size" + swimmingSize + ".png")
+                :
+                (rd + nmb + ".png")
+            chk[i].childNodes[1].setAttribute("src", s.join("/"));
+        }
+    }
     borderColor = nmb;
 }
 
 function setColorBorder(number, cs) {
-    const is_mobile = window.innerWidth <= 1200 ? 0 : 1;
     const borderName = number[0].split('-')[0]
-    const check = document.getElementsByClassName(borderName + "-border")[is_mobile].childNodes[1];
+    const check = document.getElementsByClassName(borderName + "-border") //[is_mobile].childNodes[1];
     setNewColor(check, number[1], cs);
 }
 
