@@ -120,10 +120,10 @@ function setTypeBorder(types, cs) {
                 const new_url = check.getAttribute("src").split("/")
                 new_url[new_url.length - 1] = types[0].charAt(0).toUpperCase() + types[0].slice(1) + borderColor +
                     "size" + types[1] + ".png";
-                    check.setAttribute("src", new_url.join("/"));
+                check.setAttribute("src", new_url.join("/"));
                 console.log(new_url);
             }
-        
+
             check.setAttribute("class", newClassName);
         }
     }
@@ -134,7 +134,7 @@ function setNewColor(chk, nmb, cs) {
     const s = gets.split("/");
     const rd = cs ?
         s[s.length - 1].split(".")[0].split("size")[0].slice(0, -1)
-    :
+        :
         s[s.length - 1].split(".")[0].slice(0, -1)
     console.log(rd, chk, nmb, cs);
     s[s.length - 1] = cs ?

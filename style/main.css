@@ -2552,6 +2552,12 @@ label {
     cursor: pointer;
 }
 
+.overborder {
+    position: absolute;
+    background: #333541;
+    z-index: 10;
+}
+
 .luxor-border,
 .classic-border,
 .rio-border,
@@ -2570,6 +2576,7 @@ label {
     overflow: hidden;
     border-radius: 21px;
     border: 9px solid #333541;
+    background: #333541;
 }
 
 /* CLASSIC STYLES */
@@ -2819,10 +2826,10 @@ label {
 /* QUICK STYLES */
 
 .quick1pc {
-    width: 83%;
+    width: 76%;
     position: absolute;
-    height: 105%;
-    margin-right: -1px;
+    height: 102%;
+    margin-right: 2px;
 }
 
 .quick2pc {
@@ -2850,38 +2857,38 @@ label {
 }
 
 .quick1mobile {
-    width: 40%;
+    width: 39%;
     position: absolute;
-    height: 211%;
+    height: 205%;
     margin-top: -4px;
-    margin-right: -2px;
+    margin-right: 1px;
     transform: rotate(90deg);
 }
 
 .quick2mobile {
-    width: 43%;
+    width: 40%;
     position: absolute;
-    height: 194%;
+    height: 187%;
     margin-top: -4px;
     margin-right: -2px;
     transform: rotate(90deg);
 }
 
 .quick3mobile {
-    width: 44%;
+    width: 40%;
     position: absolute;
-    height: 164%;
+    height: 156%;
     margin-top: -4px;
     margin-right: 2px;
     transform: rotate(90deg);
 }
 
 .quick4mobile {
-    width: 44%;
+    width: 39%;
     position: absolute;
-    height: 128%;
+    height: 123%;
     margin-top: -4px;
-    margin-right: -2px;
+    margin-right: 4px;
     transform: rotate(90deg);
 }
 
@@ -2960,12 +2967,11 @@ label {
 /* MINIPOOL STYLES */
 
 .minipool1pc {
-    width: 39%;
+    width: 72%;
     position: absolute;
-    height: 146%;
-    margin-right: -15px;
-    margin-top: 9px;
-    transform: rotate(270deg);
+    height: 75%;
+    margin-right: 5px;
+    margin-top: 16px;
 }
 
 .minipool2pc {
