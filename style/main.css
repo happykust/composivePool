@@ -2453,10 +2453,10 @@ label {
 
 @media only screen and (max-width: 720px) {
     .swimming-border__list {
-        grid-gap: 18px 28px;
+        grid-gap: 18px 16px;
     }
     .swimming-border__list img {
-        width: 66px;
+        width: 51px;
     }
     .swimming-border__list .check-icon img {
         width: 8px !important;
