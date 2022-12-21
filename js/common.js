@@ -65,7 +65,7 @@ $('.swimming-check').click(function () {
     $(this).siblings('.swimming-check').removeClass('swimming-check_active');
     $(this).addClass('swimming-check_active');
 
-    $("#" + swimmingNum + "-photo_item").attr("src", swimmingImageUriStart + swimmingNum + "/" + swimmingSize + "/" +
+    $("#" + swimmingNum + "-photo_item_" + platform).attr("src", swimmingImageUriStart + swimmingNum + "/" + swimmingSize + "/" +
         swimmingColor + ".png");
 
     setClassBorder($(this));
@@ -73,70 +73,15 @@ $('.swimming-check').click(function () {
 
 function setClassBorder(p) {
     if (p[0].hasAttribute("data-border_nameses")) {
-        const type = p[0].getAttribute("data-border_nameses").split("_");
-        const cs = p[0].getAttribute("data-custom_sizes");
-        borderColor = type[1];
-        setTypeBorder(type, cs);
+        $("#" + swimmingNum + "-border_item_" + platform).attr("src", borderImageUriStart + swimmingNum + "/" + swimmingSize + "/" +
+            borderColor + ".png");
     }
     if (p[0].hasAttribute("color-border")) {
         const type = p[0].getAttribute("color-border").split("_");
-        const cs = p[0].getAttribute("data-custom_sizes");
-        setColorBorder(type, cs);
+        borderColor = type[1];
+        $("#" + swimmingNum + "-border_item_" + platform).attr("src", borderImageUriStart + swimmingNum + "/" + swimmingSize + "/" +
+            type[1] + ".png");
     }
-}
-
-function setTypeBorder(types, cs) {
-    const newClassName = types[0] + types[1] + platform;
-
-    $("#" + swimmingNum + "-border_item").attr("src", borderImageUriStart + swimmingNum + "/" + swimmingSize + "/" +
-        borderColor + ".png");
-
-    // const els = document.getElementsByClassName(types[0] + "-border");
-
-/*    for(let i = 0; i < els.length; i++) {
-        const element = els[i];
-        if (element.getAttribute("platform") === platform) {
-            const check = element.childNodes[1];
-
-            if (cs) {
-                const new_url = check.getAttribute("src").split("/")
-                new_url[new_url.length - 1] = types[0].charAt(0).toUpperCase() + types[0].slice(1) + borderColor +
-                    "size" + types[1] + ".png";
-                check.setAttribute("src", new_url.join("/"));
-                console.log(new_url);
-            }
-
-            check.setAttribute("class", newClassName);
-        }
-    }*/
-}
-
-function setNewColor(chk, nmb, cs) {
-    for (let i = 0; i < chk.length; i++) {
-        if (chk[i].getAttribute("platform") === platform) {
-            const gets = chk[i].childNodes[1].getAttribute("src")
-            const s = gets.split("/");
-            const rd = cs ?
-                s[s.length - 1].split(".")[0].split("size")[0].slice(0, -1)
-                :
-                s[s.length - 1].split(".")[0].slice(0, -1)
-            s[s.length - 1] = cs ?
-                (rd + nmb + "size" + swimmingSize + ".png")
-                :
-                (rd + nmb + ".png")
-            chk[i].childNodes[1].setAttribute("src", s.join("/"));
-        }
-    }
-    borderColor = nmb;
-}
-
-function setColorBorder(number, cs) {
-    const borderName = number[1];
-    $("#" + swimmingNum + "-border_item").attr("src", borderImageUriStart + swimmingNum + "/" + swimmingSize + "/" +
-    borderName + ".png");
-
-    // const check = document.getElementsByClassName(borderName + "-border")
-    // setNewColor(check, number[1], cs);
 }
 
 $('.swimming-tab').click(function (e) {
@@ -166,7 +111,7 @@ $('.swimming-tab').click(function (e) {
 });
 
 
-$('.swimming-frame').on('afterChange', function (event, slick, currentSlide, nextSlide) {
+$('.swimming-frame').on('afterChange', function () {
     let swimming = $('.swimming-wrap');
 
     swimmingColor = 1;

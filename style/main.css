@@ -2337,6 +2337,25 @@ label {
     }
 }
 
+@media screen and (max-width: 1200px) {
+    .swimming-photo_item {
+        transform: rotate(90deg);
+        width: 32%;
+    }
+    .luxor-border,
+    .classic-border,
+    .rio-border,
+    .marathon-border,
+    .spa-border,
+    .splash-border,
+    .minipool-border,
+    .supermini-border,
+    .ipool-border,
+    .quick-border {
+        height: 300px;
+    }
+}
+
 @media screen and (max-width: 980px) {
     .swimming-color__list {
         grid-template-columns: repeat(auto-fill, minmax(-webkit-calc( 100% / 6 - 30px), 1fr));
@@ -2485,6 +2504,18 @@ label {
         grid-template-columns: repeat(auto-fill, minmax(-webkit-calc( 100% / 3 - 43px), 1fr));
         grid-template-columns: repeat(auto-fill, minmax(calc( 100% / 3 - 43px), 1fr));
     }
+    .luxor-border,
+    .classic-border,
+    .rio-border,
+    .marathon-border,
+    .spa-border,
+    .splash-border,
+    .minipool-border,
+    .supermini-border,
+    .ipool-border,
+    .quick-border {
+        height: 300px!important;
+    }
 }
 
 @media screen and (max-width: 980px) {
@@ -2498,6 +2529,18 @@ label {
     .swimming-size__list {
         grid-template-columns: repeat(auto-fill, minmax(-webkit-calc( 100% / 2 - 43px), 1fr));
         grid-template-columns: repeat(auto-fill, minmax(calc( 100% / 2 - 43px), 1fr));
+    }
+    .luxor-border,
+    .classic-border,
+    .rio-border,
+    .marathon-border,
+    .spa-border,
+    .splash-border,
+    .minipool-border,
+    .supermini-border,
+    .ipool-border,
+    .quick-border {
+        height: 250px!important;
     }
 }
 
@@ -2519,6 +2562,36 @@ label {
         -webkit-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .luxor-border,
+    .classic-border,
+    .rio-border,
+    .marathon-border,
+    .spa-border,
+    .splash-border,
+    .minipool-border,
+    .supermini-border,
+    .ipool-border,
+    .quick-border {
+        height: 200px!important;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .luxor-border,
+    .classic-border,
+    .rio-border,
+    .marathon-border,
+    .spa-border,
+    .splash-border,
+    .minipool-border,
+    .supermini-border,
+    .ipool-border,
+    .quick-border {
+        height: 150px!important;
     }
 }
 
@@ -2579,6 +2652,19 @@ label {
     height: 700px;
 }
 
+.luxor-border > img:nth-of-type(1),
+.classic-border > img:nth-of-type(1),
+.rio-border > img:nth-of-type(1),
+.marathon-border > img:nth-of-type(1),
+.spa-border > img:nth-of-type(1),
+.splash-border > img:nth-of-type(1),
+.minipool-border > img:nth-of-type(1),
+.supermini-border > img:nth-of-type(1),
+.ipool-border > img:nth-of-type(1),
+.quick-border > img:nth-of-type(1) {
+    z-index: 1;
+}
+
 /* CLASSIC STYLES */
 
 .classic1pc {
@@ -2607,48 +2693,9 @@ label {
     position: absolute;
 }
 
-.luxor1mobile{
+.luxor-mobile {
     width: 36%;
     position: absolute;
-    height: 186%;
-    margin-right: -7px;
-    margin-top: 5px;
-    transform: rotate(90deg);
-}
-
-.luxor2mobile {
-    width: 36%;
-    position: absolute;
-    height: 169%;
-    margin-right: -4px;
-    margin-top: 5px;
-    transform: rotate(90deg);
-}
-
-.luxor3mobile {
-    width: 36%;
-    position: absolute;
-    height: 151%;
-    margin-right: -7px;
-    margin-top: 5px;
-    transform: rotate(90deg);
-}
-
-.luxor4mobile {
-    width: 36%;
-    position: absolute;
-    height: 133%;
-    margin-right: -7px;
-    margin-top: 5px;
-    transform: rotate(90deg);
-}
-
-.luxor5mobile {
-    width: 36%;
-    position: absolute;
-    height: 115%;
-    margin-right: -7px;
-    margin-top: 5px;
     transform: rotate(90deg);
 }
 
