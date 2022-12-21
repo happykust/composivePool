@@ -2258,12 +2258,11 @@ label {
 }
 
 .swimming-photo_item {
-    width: 100%;
+    width: 65%;
     -o-object-fit: cover;
     object-fit: cover;
     -webkit-border-radius: 10px;
     border-radius: 10px;
-    display: none !important;
 }
 
 .swimming-photo_active {
@@ -2577,6 +2576,7 @@ label {
     border-radius: 21px;
     border: 9px solid #333541;
     background: #333541;
+    height: 700px;
 }
 
 /* CLASSIC STYLES */
@@ -2602,44 +2602,9 @@ label {
 
 /* LUXOR STYLES */
 
-.luxor1pc {
+.luxor-pc {
     width: 73%;
     position: absolute;
-    height: 93%;
-    margin-right: 8px;
-    margin-top: 5px;
-}
-
-.luxor2pc {
-    width: 73%;
-    position: absolute;
-    height: 85%;
-    margin-right: 8px;
-    margin-top: 3px;
-}
-
-.luxor3pc {
-    width: 73%;
-    position: absolute;
-    height: 75%;
-    margin-right: 8px;
-    margin-top: 4px;
-}
-
-.luxor4pc {
-    width: 73%;
-    position: absolute;
-    height: 66%;
-    margin-right: 8px;
-    margin-top: 5px;
-}
-
-.luxor5pc {
-    width: 73%;
-    position: absolute;
-    height: 57%;
-    margin-right: 8px;
-    margin-top: 5px;
 }
 
 .luxor1mobile{

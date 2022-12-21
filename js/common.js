@@ -6,6 +6,7 @@ $('.examples-tab').click(function (e) {
     console.log($('.examples-photo__item[data-photo = ' + tab + ']'));
 });
 
+const platform = window.innerWidth <= 1200 ? "mobile" : "pc";
 
 let numSlick = 0;
 
@@ -48,73 +49,54 @@ if ($(window).width() < 1200) {
     });
 }
 
-
+let swimmingNum = 1;
 let swimmingColor = 1;
 let swimmingSize = 1;
 let borderColor = 1;
 
+const swimmingImageUriStart = "images/swimming/";
+const borderImageUriStart = "images/frames/";
+
 
 $('.swimming-check').click(function () {
-    console.log('red');
-
-    if ($(this).data('color')) {
-        swimmingColor = $(this).data('color');
-    }
-
-    if ($(this).data('size')) {
-        swimmingSize = $(this).data('size');
-    }
+    if ($(this).data('color')) swimmingColor = $(this).data('color');
+    if ($(this).data('size')) swimmingSize = $(this).data('size');
 
     $(this).siblings('.swimming-check').removeClass('swimming-check_active');
     $(this).addClass('swimming-check_active');
 
-    $('.swimming-photo_item').removeClass('swimming-photo_active');
+    $("#" + swimmingNum + "-photo_item").attr("src", swimmingImageUriStart + swimmingNum + "/" + swimmingSize + "/" +
+        swimmingColor + ".png");
 
-    $('.swimming-photo_item[data-color="' + swimmingColor + '"][data-size="' + swimmingSize + '"]').addClass('swimming-photo_active');
-    let clicks = $('.swimming-tab_active')[0].textContent.replace("Серия ", "").trim();
     setClassBorder($(this));
 });
 
 function setClassBorder(p) {
-    console.log(p[0]);
     if (p[0].hasAttribute("data-border_nameses")) {
         const type = p[0].getAttribute("data-border_nameses").split("_");
         const cs = p[0].getAttribute("data-custom_sizes");
+        borderColor = type[1];
         setTypeBorder(type, cs);
     }
     if (p[0].hasAttribute("color-border")) {
         const type = p[0].getAttribute("color-border").split("_");
-        const cs = p[0].getAttribute("data-custom_sizes")
+        const cs = p[0].getAttribute("data-custom_sizes");
         setColorBorder(type, cs);
     }
-    // console.log(type);
-    /*let qstr = document.getElementsByClassName('swimming-size__item swimming-check');
-        for (let i = 0; i < qstr.length; i++) {
-            console.log(qstr[i]);
-        }
-        let qs = p[0].childNodes;
-        let qr = '';
-        for (let i = 0; i < qs.length; i++) {
-
-            console.log(qs[i].tagName);
-        }
-        //   qs = qs[qs.length - 1];
-        console.log(qs);*/
 }
 
 function setTypeBorder(types, cs) {
-    const platform = window.innerWidth <= 1200 ? "mobile" : "pc";
     const newClassName = types[0] + types[1] + platform;
-    const els = document.getElementsByClassName(types[0] + "-border");
 
-    console.log(els);
+    $("#" + swimmingNum + "-border_item").attr("src", borderImageUriStart + swimmingNum + "/" + swimmingSize + "/" +
+        borderColor + ".png");
 
-    for(let i = 0; i < els.length; i++) {
-        element = els[i];
+    // const els = document.getElementsByClassName(types[0] + "-border");
+
+/*    for(let i = 0; i < els.length; i++) {
+        const element = els[i];
         if (element.getAttribute("platform") === platform) {
-            check = element.childNodes[1];
-            console.log(newClassName);
-            console.log(check);
+            const check = element.childNodes[1];
 
             if (cs) {
                 const new_url = check.getAttribute("src").split("/")
@@ -126,11 +108,10 @@ function setTypeBorder(types, cs) {
 
             check.setAttribute("class", newClassName);
         }
-    }
+    }*/
 }
 
 function setNewColor(chk, nmb, cs) {
-    const platform = window.innerWidth <= 1200 ? "mobile" : "pc";
     for (let i = 0; i < chk.length; i++) {
         if (chk[i].getAttribute("platform") === platform) {
             const gets = chk[i].childNodes[1].getAttribute("src")
@@ -150,9 +131,12 @@ function setNewColor(chk, nmb, cs) {
 }
 
 function setColorBorder(number, cs) {
-    const borderName = number[0].split('-')[0]
-    const check = document.getElementsByClassName(borderName + "-border") //[is_mobile].childNodes[1];
-    setNewColor(check, number[1], cs);
+    const borderName = number[1];
+    $("#" + swimmingNum + "-border_item").attr("src", borderImageUriStart + swimmingNum + "/" + swimmingSize + "/" +
+    borderName + ".png");
+
+    // const check = document.getElementsByClassName(borderName + "-border")
+    // setNewColor(check, number[1], cs);
 }
 
 $('.swimming-tab').click(function (e) {
@@ -188,7 +172,6 @@ $('.swimming-frame').on('afterChange', function (event, slick, currentSlide, nex
     swimmingColor = 1;
     swimmingSize = 1;
 
-    console.log('redfed');
     $('.swimming-check').removeClass('swimming-check_active');
 
     swimming.find('.swimming-color__item:eq(0)').addClass('swimming-check_active');
