@@ -2340,7 +2340,7 @@ label {
 @media screen and (max-width: 1200px) {
     .swimming-photo_item {
         transform: rotate(90deg);
-        width: 26%;
+        width: 28%;
     }
     .luxor-border,
     .classic-border,
