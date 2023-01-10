@@ -7,13 +7,20 @@ $('.examples-tab').click(function (e) {
 });
 
 const platform = window.innerWidth <= 1200 ? "mobile" : "pc";
+const isiPhone = window.navigator.userAgent.includes("iPhone");
 
-if (window.navigator.userAgent.includes("iPhone")) {
+function fixiPhoneBorderHeight() {
+    if (!isiPhone) return 0
+    $('.swimborder').css("height", "");
+    $('.swimborder').css("height", $('.swimborder').height()+7);
+}
+
+if (isiPhone) {
     $('#apple-fix').append(
         ".swimming-photo_item {width: 28.8%!important}"
     )
     $('.swimborder').width($('.swimborder').width()-3.5)
-    $('.swimborder').height($('.swimborder').height()+7)
+    $('.swimborder').css("height", $('.swimborder').height()+7);
 }
 
 let numSlick = 0;
@@ -84,6 +91,7 @@ function setClassBorder(p) {
     if (p[0].hasAttribute("data-border_nameses")) {
         $("#" + swimmingNum + "-border_item_" + platform).attr("src", borderImageUriStart + swimmingNum + "/" + swimmingSize + "/" +
             borderColor + ".png");
+        fixiPhoneBorderHeight();
     }
     if (p[0].hasAttribute("color-border")) {
         const type = p[0].getAttribute("color-border").split("_");
