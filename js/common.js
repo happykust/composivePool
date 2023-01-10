@@ -92,6 +92,7 @@ function setClassBorder(p) {
         $("#" + swimmingNum + "-border_item_" + platform).attr("src", borderImageUriStart + swimmingNum + "/" + swimmingSize + "/" +
             borderColor + ".png");
         fixiPhoneBorderHeight();
+        fixiPhoneBorderHeight();
     }
     if (p[0].hasAttribute("color-border")) {
         const type = p[0].getAttribute("color-border").split("_");
