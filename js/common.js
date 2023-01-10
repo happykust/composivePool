@@ -12,7 +12,7 @@ if (window.navigator.userAgent.includes("iPhone")) {
     $('#apple-fix').append(
         ".swimming-photo_item {width: 28.8%!important}"
     )
-    $('.swimborder').width($('.swimborder').width()-3)
+    $('.swimborder').width($('.swimborder').width()-3.5)
     $('.swimborder').height($('.swimborder').height()+7)
 }
 
