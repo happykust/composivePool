@@ -10,7 +10,7 @@ const platform = window.innerWidth <= 1200 ? "mobile" : "pc";
 
 if (window.navigator.userAgent.includes("iPhone")) {
     $('#apple-fix').append(
-        ".swimming-photo_item {width: 27%!important}"
+        ".swimming-photo_item {width: 28%!important}"
     )
 }
 
