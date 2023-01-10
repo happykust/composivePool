@@ -2342,6 +2342,11 @@ label {
         transform: rotate(90deg);
         width: 29%;
     }
+    @media only screen and (-webkit-min-device-pixel-ratio: 1) {
+        ::i-block-chrome, .swimming-photo_item {
+            width: 26%;
+        }
+    }
     .luxor-border,
     .classic-border,
     .rio-border,
