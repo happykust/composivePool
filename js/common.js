@@ -12,7 +12,8 @@ if (window.navigator.userAgent.includes("iPhone")) {
     $('#apple-fix').append(
         ".swimming-photo_item {width: 28.8%!important}"
     )
-    $('.swimborder').width($('.swimborder').width()-0.8)
+    $('.swimborder').width($('.swimborder').width()-1.5)
+    $('.swimborder').height($('.swimborder').height()+3)
 }
 
 let numSlick = 0;
