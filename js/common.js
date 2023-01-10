@@ -8,6 +8,12 @@ $('.examples-tab').click(function (e) {
 
 const platform = window.innerWidth <= 1200 ? "mobile" : "pc";
 
+if (window.navigator.userAgent.includes("iPhone")) {
+    $('#apple-fix').append(
+        ".swimming-photo_item {width: 26%}"
+    )
+}
+
 let numSlick = 0;
 
 $('.gallery-slider').each(function () {
